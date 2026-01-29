@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class UserInfo {
+public class J0_UserInfo {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
