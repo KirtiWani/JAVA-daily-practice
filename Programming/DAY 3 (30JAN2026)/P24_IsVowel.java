@@ -1,5 +1,5 @@
 import java.util.Scanner;
-class P23_IsVowel{
+class P24_IsVowel{
 public static void main (String[]args){
 
 Scanner sc = new Scanner(System.in);

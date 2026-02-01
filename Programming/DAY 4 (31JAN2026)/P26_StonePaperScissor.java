@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class P25_StonePaperScissor{
+class P26_StonePaperScissor{
 	
 public static void main(String[]args){
 	Scanner sc = new Scanner(System.in);

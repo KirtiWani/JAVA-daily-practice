@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class P26_GradeCalculator {
+class P27_GradeCalculator {
 public static void main (String[]args){
 	
 	Scanner sc = new Scanner(System.in);

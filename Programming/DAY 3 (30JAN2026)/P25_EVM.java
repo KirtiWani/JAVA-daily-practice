@@ -2,7 +2,7 @@
 
 import java.util.Scanner;
 
-class P24_EVM
+class P25_EVM
 {
    static int bjp , aap , cong , mns , nota;
    public static void main (String[]args){
