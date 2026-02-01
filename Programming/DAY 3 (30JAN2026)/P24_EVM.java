@@ -52,5 +52,21 @@ for(int i = 1; i <= population ; i++ )
    System.out.println("aap " + aap);
    System.out.println("mns " + mns);
    System.out.println("nota " + nota);
+   
+   if(bjp>=cong && bjp>=aap && bjp>=mns && bjp>=nota){
+	   System.out.println("BJP won the election by" + bjp + "votes");
+   }
+   else if (cong>=bjp && cong>=aap && cong>=mns && cong>=nota){
+	   System.out.println("CONG won the election by" + bjp + "votes");
+   }
+   else if (mns>=bjp && mns>=aap && mns>cong && cong>=nota){
+	   System.out.println("MNS won the election by" + bjp + "votes");
+   }
+   else if (aap>=bjp && aap>=mns && aap>cong && aap>=nota){
+	   System.out.println("AAP won the election by " + bjp + " votes");
+   }
+   else if (nota>=bjp && nota>=aap && nota>cong && nota>=mns){
+	   System.out.println("No one won the election");
+   }
   }
-}
+ }
