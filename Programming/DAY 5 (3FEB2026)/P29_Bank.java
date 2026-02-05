@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.time.LocalDateTime;
 
 class P29_Bank{
 		static String name;
@@ -8,6 +10,8 @@ class P29_Bank{
 		static String pancard;
 		static double balance;
 		static int pin;
+		static LocalDateTime a ;//null
+		static ArrayList<String> transaction=new ArrayList <String>();
 		public static void main(String[]args){
 			Scanner sc = new Scanner(System.in);
 			welcomeLoop :
@@ -37,6 +41,9 @@ class P29_Bank{
 						pancard = new Scanner(System.in).next();
 						System.out.print("Enter an amount : ");
 						balance = new Scanner(System.in).nextDouble();
+						a = LocalDateTime.now();
+						transaction.add("DEPOSIT (Creation)" + balance + "rs. "+
+						(a.getHour())%12+":"+a.getMinute()+":"+a.getSecond());
 						System.out.print("Pin : ");
 						pin = new Scanner(System.in).nextInt();
 						System.out.println("\n ACCOUNT CREATED SUCCESSFULLY \n");
@@ -60,7 +67,7 @@ class P29_Bank{
 							for ( ; ; )
 							{
 								System.out.println("\n ***** FEATURES ***** \n");
-								System.out.println("1.DEPOSIT \n2.WITHDRAW \n3.CHECK BALANCE \n4.LOGOUT");
+								System.out.println("1.DEPOSIT \n2.WITHDRAW \n3.CHECK BALANCE \n4.TRANSACTIONS \n5.LOGOUT");
 								int opt = sc.nextInt();
 								switch (opt){
 									case 1 :{
@@ -68,6 +75,9 @@ class P29_Bank{
 										System.out.print("Enter deposit amount: ");
 										double deptAmt =  new Scanner(System.in).nextDouble();
 										balance += deptAmt;
+										a = LocalDateTime.now();
+										transaction.add("DEPOSIT: "+deptAmt+" rs. "+
+										(a.getHour())%12+":"+a.getMinute()+":"+a.getSecond());
 										System.out.println("\n AMOUNT DEPOSITED SUCCESSFULLY\n");
 										break;
 									}
@@ -79,7 +89,10 @@ class P29_Bank{
 										int pin2 = new Scanner(System.in).nextInt();
 										if(pin2 == pin){
 											if(wdrwAmt <= balance){
-												balance -= wdrwAmt;	
+												balance -= wdrwAmt;
+												a = LocalDateTime.now();
+										        transaction.add("DEPOSIT: "+wdrwAmt+" rs. "+
+										        (a.getHour())%12+":"+a.getMinute()+":"+a.getSecond());
 												System.out.println("\n AMOUNT DEBITED SUCCESSFULLY \n");
 											}
 											else {
@@ -99,9 +112,18 @@ class P29_Bank{
 										} else{
 											System.out.println("\n INVALID PIN \n ");
 										}
-										break;
+								
+								break;
 									}
 									case 4 : {
+										System.out.println("\n **** TRANSACTIONS **** \n ");
+										for(String ele : transaction){
+											System.out.println(ele);
+										}
+										System.out.println();
+										break;
+									}
+									case 5 : {
 										System.out.println("\n THANK YOU AND VISIT AGAIN \n ");
 										continue welcomeLoop;
 									}

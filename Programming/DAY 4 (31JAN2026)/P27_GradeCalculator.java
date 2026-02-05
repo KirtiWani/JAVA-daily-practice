@@ -8,7 +8,8 @@ public static void main (String[]args){
 	System.out.print("Enter your marks: ");
 	
 	double marks = sc.nextDouble();
-	final double TOTAL_MARKS = 500;
+	final
+	double TOTAL_MARKS = 500;
 	
 	   if(marks<0 || marks>500)
 	   { System.out.println("\n INVALID RESPONSE \n");
